@@ -1,0 +1,34 @@
+sudo: true
+language: cpp
+
+compiler:
+  - gcc
+
+addons:
+  apt:
+    sources:
+    - boost-latest
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.9
+    - g++-4.9
+    - libboost1.55-all-dev
+
+before_install:
+  - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+  - sudo pip install codecov # From https://github.com/travis-ci/travis-ci/issues/1705
+  - sudo apt-get update -qq
+
+#install:
+  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
+
+script: 
+ - $CXX --version
+ - g++ --version
+ - qmake
+ - cat Makefile
+ - make
+
+after_success:
+  - codecov
