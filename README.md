@@ -1,13 +1,13 @@
-# qmake-cpp11
+# qmake-cpp11-boost
 
-[![Build Status](https://travis-ci.org/richelbilderbeek/qmake-cpp11.svg?branch=master)](https://travis-ci.org/richelbilderbeek/qmake-cpp11)
-[![codecov.io](https://codecov.io/github/richelbilderbeek/qmake-cpp11/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/qmake-cpp11?branch=master)
+[![Build Status](https://travis-ci.org/richelbilderbeek/qmake-cpp11-boost.svg?branch=master)](https://travis-ci.org/richelbilderbeek/qmake-cpp11-boost)
 
-C++ example project that uses qmake and C++11 to compile.
+C++ example project that uses qmake, C++11 and Boost, to compile and get to work with Travis CI.
 
 Goal is to:
 
  * Compile with C++11 support, currently using `g++` only
+ * Compile with the Boost libraries
  * Travis CI to check if it compiles correctly
 
 # I want to add `clang` support
